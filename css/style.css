@@ -305,6 +305,19 @@ nav a {
     align-self: flex-start;
 }
 
+.form-status {
+    margin-top: 20px;
+
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contact-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 @media (max-width: 800px) {
 
     .about-grid {
