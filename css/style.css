@@ -318,6 +318,35 @@ nav a {
     cursor: not-allowed;
 }
 
+.logo {
+    color: #181818;
+    text-decoration: none;
+}
+
+.legal-page {
+    padding: 100px 0;
+}
+
+.legal-content {
+    max-width: 800px;
+}
+
+.legal-content h1 {
+    margin-bottom: 48px;
+    font-size: 48px;
+}
+
+.legal-content h2 {
+    margin-top: 40px;
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.legal-content p {
+    line-height: 1.8;
+    color: #555555;
+}
+
 @media (max-width: 800px) {
 
     .about-grid {
