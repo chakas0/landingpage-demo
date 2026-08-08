@@ -23,7 +23,7 @@ form.addEventListener("submit", async function (event) {
 
         if (response.ok) {
             formStatus.textContent =
-                "Vielen Dank! Deine Nachricht wurde erfolgreich gesendet.";
+                "Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet.";
 
             form.reset();
         } else {
@@ -36,5 +36,5 @@ form.addEventListener("submit", async function (event) {
     }
 
     submitButton.disabled = false;
-    submitButton.textContent = "Nachricht senden";
+    submitButton.textContent = "Anfrage senden";
 });

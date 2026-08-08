@@ -15,7 +15,7 @@ body {
 }
 
 .container {
-    width: min(1100px, 90%);
+    width: min(1200px, 90%);
     margin: 0 auto;
 }
 
@@ -53,48 +53,113 @@ nav a {
 /* Hero */
 
 .hero {
-    min-height: 650px;
+    position: relative;
+
+    min-height: 720px;
 
     display: flex;
     align-items: center;
 
-    background: #f5f5f5;
+    padding: 80px 0;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(10, 10, 10, 0.82) 0%,
+            rgba(10, 10, 10, 0.68) 38%,
+            rgba(10, 10, 10, 0.25) 68%,
+            rgba(10, 10, 10, 0.08) 100%
+        ),
+        url("../images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #ffffff;
 }
 
 .hero-content {
-    max-width: 850px;
+    max-width: 650px;
 }
 
 .eyebrow {
     margin-bottom: 20px;
 
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 13px;
+    font-weight: 700;
     letter-spacing: 2px;
+
+    color: rgba(255, 255, 255, 0.75);
 }
 
 .hero h1 {
-    max-width: 800px;
+    max-width: 650px;
 
-    font-size: 64px;
-    line-height: 1.05;
-    letter-spacing: -2px;
+    font-size: clamp(50px, 5vw, 72px);
+    line-height: 1.03;
+    letter-spacing: -2.5px;
+
+    color: #ffffff;
 }
 
 .hero-text {
-    max-width: 600px;
-    margin-top: 24px;
+    max-width: 550px;
+    margin-top: 28px;
 
-    font-size: 20px;
-    line-height: 1.6;
-    color: #555555;
+    font-size: 19px;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.82);
 }
 
 .hero-buttons {
     display: flex;
-    gap: 16px;
+    flex-wrap: wrap;
+    gap: 14px;
 
-    margin-top: 32px;
+    margin-top: 36px;
+}
+
+.hero .primary {
+    background: #ffffff;
+    color: #181818;
+}
+
+.hero .secondary {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    max-width: 620px;
+
+    margin-top: 56px;
+    padding-top: 28px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hero-stats strong {
+    font-size: 26px;
+    color: #ffffff;
+}
+
+.hero-stats span {
+    font-size: 13px;
+    line-height: 1.4;
+
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .button {
@@ -281,7 +346,8 @@ nav a {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
     width: 100%;
 
     padding: 14px 16px;
@@ -291,10 +357,12 @@ nav a {
 
     font: inherit;
     background: #ffffff;
+    cursor: pointer;
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
     outline: 2px solid #181818;
     outline-offset: 2px;
 }
@@ -349,14 +417,7 @@ nav a {
 
 @media (max-width: 800px) {
 
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-    }
+    /* Navigation */
 
     .nav {
         height: auto;
@@ -372,30 +433,84 @@ nav a {
         gap: 16px;
     }
 
+    /* Hero */
+
     .hero {
-        min-height: auto;
-        padding: 100px 0;
+        min-height: 680px;
+        padding: 70px 0;
+
+        background-position: 60% center;
+
+        background-image:
+            linear-gradient(
+                90deg,
+                rgba(10, 10, 10, 0.82) 0%,
+                rgba(10, 10, 10, 0.65) 35%,
+                rgba(10, 10, 10, 0.18) 62%
+                rgba(10, 10, 10, 0.02) 100%
+            ),
+            url("../images/hero.jpg");
     }
 
     .hero h1 {
-        font-size: 44px;
-        letter-spacing: -1px;
+        font-size: clamp(42px, 11vw, 56px);
+        letter-spacing: -2px;
     }
 
     .hero-text {
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .hero-buttons {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
     }
+
+    .hero-buttons .button {
+        text-align: center;
+    }
+
+    .hero-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+
+        margin-top: 42px;
+    }
+
+    /* Leistungen */
 
     .services-grid {
         grid-template-columns: 1fr;
     }
 
+    /* Über uns */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* Allgemein */
+
     .section {
         padding: 70px 0;
+    }
+
+    /* Footer */
+
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
     }
 }
