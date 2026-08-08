@@ -258,16 +258,64 @@ nav a {
     color: #888888;
 }
 
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+
+    font: inherit;
+    background: #ffffff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: 2px solid #181818;
+    outline-offset: 2px;
+}
+
+.contact-form button {
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
 @media (max-width: 800px) {
 
     .about-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-}
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
 
-.footer-content {
-    flex-direction: column;
-}
+    .footer-content {
+        flex-direction: column;
+    }
+
     .nav {
         height: auto;
         padding: 24px 0;
